@@ -1,7 +1,6 @@
 
                                             MICROSOFT POWER PLATFORM – FUNDAMENTALS
 
-
 01. INTRODUCTION TO MICROSOFT POWER PLATFORM
 
 Definition:
