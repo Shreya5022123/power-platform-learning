@@ -1,0 +1,241 @@
+
+                                            MICROSOFT POWER PLATFORM – FUNDAMENTALS
+
+
+01. INTRODUCTION TO MICROSOFT POWER PLATFORM
+
+Definition:
+Microsoft Power Platform is a low-code platform used to build business
+applications, automate processes, analyze data, create websites, and develop
+AI agents.
+
+Why is it used?
+- Digitizes manual business processes.
+- Reduces repetitive work.
+- Connects data and applications.
+- Helps teams build suitable solutions faster.
+
+Example:
+An insurance company wants employees to submit travel reimbursement claims.
+Power Apps provides the submission form, Dataverse stores the claims, and
+Power Automate sends the claim for manager approval.
+
+Key idea:
+Power Platform is a collection of tools that can work together; it is not
+just one application.
+
+02. BUSINESS VALUE OF POWER PLATFORM
+
+
+Business value means the practical benefits an organization gains by using
+Power Platform.
+
+Main benefits:
+1. Productivity: Automates repetitive tasks.
+2. Faster development: Low-code tools help build suitable apps quickly.
+3. Better decisions: Power BI turns data into reports and insights.
+4. Integration: Connectors link different systems.
+5. Process consistency: Workflows help standardize business steps.
+6. Improved accessibility: Apps work across supported devices.
+
+Example:
+Before automation, an employee emails a leave request and HR manually updates
+a spreadsheet. With Power Apps and Power Automate, the employee submits a
+request in an app, the manager receives an approval, and the request status
+is updated automatically.
+
+Important:
+Licensing, security, governance, performance, and data quality still matter.
+
+03. COMPONENTS OF POWER PLATFORM
+
+
+A. POWER APPS
+Purpose: Build business applications.
+
+Types:
+- Canvas app: Maker designs the user interface and controls screen layout.
+- Model-driven app: Interface is generated from a Dataverse data model and
+  configured forms, views, and components.
+
+Example:
+A canvas app lets employees submit expenses using a customized layout.
+A model-driven app helps a service team manage customer cases and related data.
+
+B. POWER AUTOMATE
+Purpose: Automate workflows between applications and services.
+
+Key terms:
+- Trigger: Event that starts a flow.
+- Action: Step performed by the flow.
+- Condition: Logic that determines which path the flow follows.
+
+Common cloud flow types:
+- Automated: Starts when an event occurs.
+- Instant: Started manually or by a user action.
+- Scheduled: Runs at a configured time or interval.
+
+Example:
+When a leave request is submitted (trigger), send it to a manager for approval
+(action), then update the request based on the decision (condition and actions).
+
+C. POWER BI
+Purpose: Connect to, transform, model, and visualize data.
+
+Key terms:
+- Power Query: Connects to and transforms data.
+- DAX: Formula language used for calculations in Power BI.
+- Report: Interactive collection of visuals, often across multiple pages.
+- Dashboard: Single-page canvas in the Power BI service.
+
+Example:
+A claims report displays total claims, approved claims, rejected claims, and
+average processing time.
+
+D. POWER PAGES
+Purpose: Build external-facing business websites.
+
+Example:
+An insurance customer portal where customers submit service requests and
+view information they are permitted to access.
+
+E. MICROSOFT COPILOT STUDIO
+Purpose: Build and configure AI agents that can answer questions and perform
+configured actions using connected knowledge and tools.
+
+Example:
+An employee-support agent answers common HR policy questions using approved
+company information.
+
+Quick comparison:
+Power Apps       -> Build applications.
+Power Automate   -> Automate workflows.
+Power BI         -> Analyze and visualize data.
+Power Pages      -> Build external-facing websites.
+Copilot Studio   -> Build AI agents.
+
+04. POWER PLATFORM ENVIRONMENTS
+
+
+Definition:
+An environment is a container for resources such as apps, flows, connections,
+and, when provisioned, a Dataverse database.
+
+Why use environments?
+- Separate development, testing, and production resources.
+- Control access to resources.
+- Manage application changes safely.
+- Support different teams or business purposes.
+
+Common stages:
+Development -> Build and modify the solution.
+Testing     -> Verify functionality and fix issues.
+Production  -> Run the live business solution.
+
+Example:
+A developer creates an employee app in Development, tests it with sample
+records in Testing, and deploys the approved version to Production.
+
+Important:
+An environment is not the same as a solution.
+An environment is the container; a solution packages related components
+for management and movement between environments.
+
+05. CONNECTORS AND DATA SOURCES
+
+Definition:
+A connector enables Power Platform to communicate with another service or
+data source through supported operations.
+
+Examples:
+- SharePoint
+- Microsoft Outlook
+- Microsoft Teams
+- SQL Server
+- Microsoft Dataverse
+
+How it works:
+1. Select a connector in an app or flow.
+2. Configure a connection and sign in when required.
+3. Choose an available operation.
+4. Use the supplied or returned data in the app or flow.
+
+Example:
+A Power Automate flow uses the Outlook connector to email a manager when
+a new reimbursement request is submitted.
+
+Connector categories:
+- Standard connectors: Available under qualifying standard licensing.
+- Premium connectors: Require applicable premium licensing.
+- Custom connectors: Created to connect to an API not covered by an
+  existing connector.
+
+Data source examples:
+Dataverse, SharePoint lists, SQL databases, and supported cloud services.
+
+Important:
+A connector is the integration mechanism. A data source is the system or
+location where data is stored. Licensing and availability depend on the
+specific connector and plan.
+
+06. SOLUTIONS AND APPLICATION LIFECYCLE
+---------------------------------------
+
+Definition:
+A solution is a container used to organize and transport related Power
+Platform components, such as apps, flows, tables, and other supported
+customizations.
+
+Why use solutions?
+- Group related components.
+- Move customizations between environments.
+- Support application lifecycle management.
+- Help manage versions and dependencies.
+
+Types:
+1. Unmanaged solution:
+   Commonly used during development. Components can be created and edited.
+
+2. Managed solution:
+   Commonly used for deployment to test or production environments.
+   It is a packaged deployment with more restricted customization.
+
+Typical lifecycle:
+1. Build components in a Development environment.
+2. Add components to an unmanaged solution.
+3. Export the solution.
+4. Import it into a Testing environment.
+5. Validate the application and flows.
+6. Deploy an appropriate managed solution to Production.
+
+Example:
+A team builds an employee onboarding app and its approval flow in Development.
+They package both in one solution, test the package in Testing, and then
+deploy the approved managed solution to Production.
+
+Important terms:
+- Component: An item such as an app, flow, or table.
+- Dependency: Another component required for something to work.
+- Publisher: Identifies the organization or maker responsible for a solution.
+- Environment variable: Holds a value that can differ between environments.
+- Connection reference: Represents a connection used by solution components.
+
+Important:
+Solutions do not automatically move every connection, secret, or
+environment-specific setting. Environment variables and connection references
+help manage differences between environments.
+
+
+QUICK REVISION
+
+1. Power Apps builds apps.
+2. Power Automate automates workflows.
+3. Power BI analyzes data.
+4. Power Pages creates external-facing websites.
+5. Copilot Studio creates AI agents.
+6. Dataverse stores and manages business data.
+7. An environment contains apps, flows, and other resources.
+8. A connector links Power Platform to another service.
+9. A solution groups components for application management and deployment.
+10. Unmanaged solutions are commonly used in development; managed solutions
+    are commonly used for deployment.
