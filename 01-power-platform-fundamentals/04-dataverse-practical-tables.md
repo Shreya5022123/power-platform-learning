@@ -9,6 +9,7 @@ Tables:
 - Insurance Claim
 
 ## 2. Customer Table
+<img width="2836" height="1338" alt="image" src="https://github.com/user-attachments/assets/81a8138d-7740-480b-af4c-37d165089f48" />
 
 Columns:
 - Customer Name (Primary Name)
@@ -19,6 +20,7 @@ Columns:
 - Customer Type (Choice: Individual, Corporate)
 
 ## 3. Insurance Policy Table
+<img width="2940" height="1442" alt="image" src="https://github.com/user-attachments/assets/78a04104-f3b7-43f0-ac0c-733caa92543e" />
 
 Columns:
 - Policy Name (Primary Name)
@@ -35,6 +37,7 @@ Relationship:
 Customer 1:N Insurance Policy.
 
 ## 4. Insurance Claim Table
+<img width="2890" height="1602" alt="image" src="https://github.com/user-attachments/assets/7cb25e2e-cdd3-4acc-8d02-ff8a1e2e5633" />
 
 Columns:
 - Claim Name (Primary Name)
