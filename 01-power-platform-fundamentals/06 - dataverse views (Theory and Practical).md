@@ -208,6 +208,8 @@ The objective is to create useful views for managing insurance policies and clai
 ### 7.1 Pending Claims
 
 Purpose: Displays claims that are submitted or currently under review.
+<img width="1030" height="550" alt="image" src="https://github.com/user-attachments/assets/491d0048-321c-423c-8226-813fd3730519" />
+
 
 Columns:
 
@@ -238,6 +240,8 @@ Sorting:
 - Claim Date: Descending
 
 ### 7.2 Approved Claims
+<img width="1664" height="736" alt="image" src="https://github.com/user-attachments/assets/a3dae0e1-9e9b-4c57-a90f-fd876219237b" />
+
 
 Purpose: Displays claims that have been approved.
 
@@ -302,6 +306,7 @@ Filter:
 ### 8.2 Active Policies
 
 Purpose: Displays policies whose business status is Active.
+<img width="953" height="403" alt="image" src="https://github.com/user-attachments/assets/a037b7af-fcb9-4b9f-9697-1d76f053c184" />
 
 Filter:
 
@@ -313,6 +318,7 @@ Sorting:
 ### 8.3 Expired Policies
 
 Purpose: Displays policies whose business status is Expired.
+<img width="832" height="313" alt="image" src="https://github.com/user-attachments/assets/7317cb76-dc7d-419a-8ff0-3b20c804f257" />
 
 Filter:
 
