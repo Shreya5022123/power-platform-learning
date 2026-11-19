@@ -1,149 +1,79 @@
-# 07 - Dataverse Business Rules (Theory)
+# Dataverse Business Rules and Validation – Theory
 
-## 1. Introduction
+## 1. What are Business Rules?
 
-Dataverse Business Rules allow developers and makers to apply business logic and validation to table data without writing JavaScript or C# code.
+Business Rules allow makers to implement business logic and validation in Dataverse without writing code for common scenarios.
 
-They help control:
-- Field visibility
-- Field requirements
-- Field values
-- Field editability
-- Data validation
-- Error messages
+They control field behaviour, validate data and enforce business requirements.
 
-**Example:** When a claim status becomes Settled, the Settlement Date field should become visible and mandatory.
+**Example:** If Claim Status is Rejected, Rejection Reason should be displayed and required.
 
-## 2. Why Business Rules Are Used
+## 2. Components of Business Rules
 
-Business Rules help:
-- Maintain data accuracy and consistency.
-- Prevent invalid data entry.
-- Reduce manual validation.
-- Improve user experience.
-- Implement simple business logic without code.
-- Enforce standard business requirements.
+- **Condition:** Checks whether a particular condition is satisfied.
+- **Action:** Executes an operation based on the condition.
+- **Scope:** Defines where the rule applies.
 
-## 3. Components of a Business Rule
-
-A Business Rule consists of three main components.
-
-### A. Condition
-
-A condition defines when a rule should execute.
-
-Examples:
-- Claim Status equals Settled.
-- Claim Amount is less than or equal to zero.
-- Policy Status equals Cancelled.
-- Email contains data.
-
-Common operators:
-- Equals
-- Does Not Equal
-- Contains Data
-- Does Not Contain Data
-- Greater Than
-- Greater Than or Equal To
-- Less Than
-- Less Than or Equal To
-
-### B. Actions
-
-Actions define what happens when a condition evaluates to true or false.
+## 3. Common Business Rule Actions
 
 | Action | Purpose |
 |---|---|
 | Set Business Required | Makes a field mandatory |
-| Set Business Recommended | Recommends entering a value |
+| Set Business Recommended | Marks a field as recommended |
+| Set Value | Automatically populates a field |
 | Set Visibility | Shows or hides a field |
-| Set Field Value | Automatically sets a field value |
-| Set Default Value | Sets a default field value |
-| Lock | Makes a field read-only |
-| Unlock | Allows a field to be edited |
+| Set Field Requirement | Changes the requirement level |
+| Lock / Unlock | Controls field editing |
 | Show Error Message | Displays a validation error |
 
-### C. Scope
+## 4. Conditions and Operators
 
-Scope determines where the Business Rule is applied.
+Conditions determine when an action should execute.
 
-| Scope | Description |
-|---|---|
-| Entity | Applies at the table level where supported |
-| All Forms | Applies to all supported forms of the table |
-| Specific Form | Applies to a selected form |
+Common operators include:
+- Equals
+- Does Not Equal
+- Contains
+- Does Not Contain
+- Greater Than
+- Less Than
+- Greater Than or Equal To
+- Less Than or Equal To
+- Contains Data
+- Does Not Contain Data
 
-**Important:** Form-level actions such as visibility and locking need a form context. Entity-level rules and form-level rules have different execution capabilities.
+Multiple conditions can be combined using:
 
-## 4. Types of Business Rule Conditions
+- AND: All conditions must be true.
+- OR: At least one condition must be true.
 
-Conditions can be used to validate:
+## 5. Scope of Business Rules
 
-**Field values**
-- Claim Amount > 0
-- Premium Amount <= Sum Assured
+- **Table:** Applies at the table level, subject to supported execution scenarios.
+- **All Forms:** Applies to all main forms.
+- **Specific Form:** Applies to a selected main form.
 
-**Field availability**
-- Email contains data.
-- Settlement Date does not contain data.
+## 6. Business Rules vs Validation
 
-**Choice values**
-- Claim Status = Rejected
-- Policy Status = Cancelled
+Business Rules can enforce requirements such as mandatory fields, field visibility and value validation.
 
-## 5. Business Rules vs Column Requirements
+For example:
+- Claim Amount must be greater than zero.
+- Policy End Date must be later than Start Date.
+- Rejection Reason must be provided for rejected claims.
 
-Dataverse provides three column requirement levels:
+## 7. Limitations
 
-| Requirement | Meaning |
-|---|---|
-| Optional | The field can be left blank |
-| Business Recommended | A value is recommended |
-| Business Required | A value is required |
+- Business Rules are suitable for simple business logic.
+- Complex logic may require JavaScript, Power Automate or Dataverse plug-ins.
+- Behaviour depends on the rule's scope and supported execution context.
+- Business Rules do not replace all server-side validation.
 
-Column-level requirements are appropriate when a value must always be supplied.
+## 8. Practical Applications
 
-Business Rules are useful when requirements depend on conditions.
-
-Example:
-
-- Claim Date: Always required.
-- Settlement Date: Required only when Claim Status = Settled.
-- Rejection Reason: Required only when Claim Status = Rejected.
-
-## 6. Business Rules vs Other Validation Approaches
-
-| Approach | Best suited for |
-|---|---|
-| Column requirements | Mandatory fields |
-| Business Rules | Simple conditional form logic |
-| Power Automate | Workflow and automation |
-| Dataverse Plug-ins | Complex server-side validation |
-| JavaScript | Advanced client-side form behaviour |
-
-## 7. Limitations of Business Rules
-
-- They are not suitable for complex business logic.
-- They cannot generally compare a field with a value retrieved from a related table through a lookup.
-- Form-level behaviour does not guarantee validation through every external API or integration.
-- Date-based automation and multi-record calculations may require other tools.
-- They should not replace server-side validation for critical business requirements.
-
-## 8. Best Practices
-
-1. Use column-level requirements for fields that are always mandatory.
-2. Use Business Rules for conditional requirements.
-3. Display error messages that clearly explain the problem.
-4. Avoid making unrelated fields mandatory.
-5. Test both If Yes and If No branches.
-6. Validate rules through the actual model-driven app.
-7. Use server-side validation for important financial and business constraints.
-
-## 9. Key Takeaways
-
-- Business Rules implement simple business logic without code.
-- Conditions determine when actions execute.
-- Actions control fields and validation.
-- Scope determines where rules apply.
-- Column requirements and Business Rules serve different purposes.
-- Complex validation may require Power Automate or Dataverse plug-ins.
+In an insurance management system, Business Rules can:
+- Ensure valid claim amounts.
+- Require rejection reasons.
+- Validate policy dates.
+- Prevent invalid premium and sum assured values.
+- Make settlement information mandatory when required.
